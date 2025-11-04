@@ -1,4 +1,4 @@
-<h1 align="center">Myntra Clone</h1> 
+<h1 align="center">Classic-World shopping</h1> 
 
 <h2 align="center">It's a fashion e-commerce website which deals with fashion and lifstyle products.</h2>
 
