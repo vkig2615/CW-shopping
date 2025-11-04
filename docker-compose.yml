@@ -1,21 +1,20 @@
 version: "3.8"
 
-services: 
-   backend:
-      build: ./Myntra-Backend
-      ports:
-        - "8080:8080"
-      volumes:
-        - ./Myntra-Backend:/usr/src/app
-      command: [ "node", "server.js" ]
-   frontend:
-      build: .
-      ports:
-        - "3000:3000"
-      environment:
-        - NODE_OPTIONS=--openssl-legacy-provider
-      volumes:
-        - ./:/usr/src/app
-      depends_on:
-        - backend
-      command: [ "npm", "start" ]
+services:
+  backend:
+    image: vk2615/CW-backend:latest
+    ports:
+      - "8080:8080"
+    restart: always
+    command: [ "node", "server.js" ]
+
+  frontend:
+    image: vk2615/CW-frontend:latest
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_OPTIONS=--openssl-legacy-provider
+    depends_on:
+      - backend
+    restart: always
+    command: [ "npm", "start" ]
